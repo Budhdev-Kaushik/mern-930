@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript Events</title>
+</head>
+
+<body>
+    <button onclick="console.log('OnClick')" ondblclick="console.log('double Clicked')"
+        onmouseenter="console.log('mouse entered')" onmousemove="console.log('mouse moved')">
+        Submit
+    </button>
+ 
+    <button  draggable="true" ondrag="elementDragged()" ondragend="dragEventEnd(event)" ondragstart="onDragStart(event)">
+        Cancel
+    </button>
+
+    <button onclick="hello(event)" onmousemove="mouseMove(event)">New Button</button>
+    <br> <br> <br>
+
+    <img src="https://picsum.photos/seed/picsum/200/300" alt="Mountain" height="200px" width="300px" draggable="true" ondragstart="imageDragStart(event)" ondragend="imageDragStopped(event)"
+    ontouchend="console.log('imaged is touched end')"
+    ontouchstart="console.log('Image is touched')">
+
+    <script>
+        function hello(e) {
+            console.log(e);
+            console.log("Hello World");
+        }
+
+        function mouseMove(e) {
+            console.log(e.target);
+        }
+
+        function elementDragged(){
+            console.log('Element Dragged');
+        }
+
+        function dragEventEnd(e){
+            console.log('End Of Drag');
+        }
+
+        function onDragStart(e){
+            console.log('Strat of Drag');
+        }
+
+        function imageDragStart(e){
+            console.log("Image is draged started",  e.x, e.y);
+        }
+
+        function imageDragStopped(e){
+            console.log(e.target);
+            console.log('image drag is stoped', e.x, e.y);
+        }
+    </script>
+
+</body>
+
+</html>

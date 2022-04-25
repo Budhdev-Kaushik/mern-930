@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keybord Events</title>
+</head>
+
+<body>
+    <!-- <div>
+        Enter your name:  <input type="text"
+        onkeypress="console.log('Key pressed')"
+        onchange="console.log('Value changed')"
+        onkeydown="console.log('key Down')"
+        onkeyup="console.log('key Relesed')"
+        onfocus="console.log('field On focus')"
+        onblur="console.log('Out of Focus')">
+    </div> -->
+
+    <div>
+        <input type="text" onkeyup="textUpdated(event)">
+    </div>
+
+    <div>
+        <input type="checkbox" onchange="optionUpdated(event)" value="nike">
+    </div>
+    <div>
+        <input type="checkbox" onchange="optionUpdated(event)" value="addidas">
+    </div>
+
+    <div>
+        <input type="checkbox" onchange="optionUpdated(event)" value="ehllo">
+    </div>
+
+    <div>
+        <span id="range-label"></span>
+        <input type="range" oninput="rangeUpdated(event)" min="10" max="300">
+    </div>
+
+    <div>
+        <select onchange="citiesUpdated(event)">
+            <option value="101">Haryana</option>
+            <option value="102">Punjab</option>
+            <option value="103">Delhi</option>
+            <option value="104">UP</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="date" onchange="dateUpdated(event)">
+    </div>
+
+    <script>
+
+        function dateUpdated(e) {
+            console.log(e.target.value);
+        }
+
+        function citiesUpdated(e) {
+            console.log(e.target.value);
+        }
+
+        function textUpdated(e) {
+            if (e.code === "Enter") {
+                console.log(e.target.value);
+            }
+
+        }
+
+        function optionUpdated(e) {
+            if (e.target.checked === true) {
+                console.log(e.target.value);
+            }
+        }
+
+        function rangeUpdated(e) {
+            document.getElementById('range-label').innerText = e.target.value;
+            // console.log(e.target.value);
+        }
+
+
+    </script>
+</body>
+
+</html>
